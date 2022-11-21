@@ -2,9 +2,10 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const io = require("socket.io")(process.env.PORT, {
+const io = require("socket.io")(process.env.PORT || 8800, {
   cors: {
-    origin: "https://bth-social.netlify.app/",
+    origin: "*",
+    methods: ["GET", "POST"],
   },
 });
 
