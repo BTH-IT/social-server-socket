@@ -1,6 +1,10 @@
-const io = require("socket.io")(8800, {
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const io = require("socket.io")(process.env.PORT, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://bth-social.netlify.app/",
   },
 });
 
